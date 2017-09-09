@@ -10,28 +10,28 @@ const sortByScore = (a, b) => {
   }
 }
 
-const InfoIndex = ({ username, postsInfo }) => {
-  if (postsInfo.length === 0) {
-    return <div className="no-info">No posts to show!</div>;
+const CommentsIndex = ({ username, commentsInfo }) => {
+  if (commentsInfo.length === 0) {
+    return <div className="no-info">No comments to show!</div>;
   } else {
     return(
       <div>
         <div className="title">
-          {`${username}'s Posts`}
+          {`${username}'s Comments`}
         </div>
         {
-          postsInfo.sort(sortByScore).map((info, i) => {
-            let displayedInfo = info.body || info.title;
+          commentsInfo.sort(sortByScore).map((info, i) => {
+            let displayedInfo = info.body;
 
             return(
               <div className="info-wrapper" key={info + i}>
                 <div className="score">{info.score}</div>
                 <div className="info">
                   <div className="displayed-info">{displayedInfo}</div>
-                  <a href={info.url}
+                  <a href={info.postLink}
                      target="_blank"
                      className="url"
-                     value={info.url}></a>
+                     value={info.postLink}></a>
                 </div>
               </div>
             )
@@ -42,4 +42,4 @@ const InfoIndex = ({ username, postsInfo }) => {
   }
 }
 
-export default InfoIndex;
+export default CommentsIndex;

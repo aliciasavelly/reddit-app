@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import InfoIndex from './InfoIndex';
+import CommentsIndex from './CommentsIndex';
 
 class RedditUserInfo extends React.Component {
   constructor(props) {
@@ -46,6 +47,31 @@ class RedditUserInfo extends React.Component {
             error: 'Unable to fetch the data; please input a valid username.'
           })
         });
+
+    axios.get(`https://www.reddit.com/user/${username}/comments.json`)
+        .then( commentsResponse => {
+          this.setState({
+            error: ''
+          })
+
+          let comments = [];
+
+          commentsResponse.data.data.children.forEach( commentsData => {
+            let userComment = {};
+            userComment.body = commentsData.data.body;
+            userComment.score = commentsData.data.score;
+            userComment.postLink = commentsData.data.link_url;
+            comments.push(userComment);
+          });
+
+          this.setState({ userComments: comments, error: ''})
+        })
+        .catch( error => {
+          console.log(error);
+          this.setState({
+            error: 'Unable to fetch the data; please input a valid username'
+          })
+        });
   }
 
   render() {
@@ -62,6 +88,7 @@ class RedditUserInfo extends React.Component {
         </form>
         <div className="data">
           <InfoIndex username={this.state.username} postsInfo={this.state.userPosts} />
+          <CommentsIndex username={this.state.username} commentsInfo={this.state.userComments} />
         </div>
       </div>
     )
