@@ -3,6 +3,16 @@ import axios from 'axios';
 import PostsIndex from './PostsIndex';
 import CommentsIndex from './CommentsIndex';
 
+const sortByScore = (a, b) => {
+  if (a.score > b.score) {
+    return -1;
+  } else if (a.score < b.score) {
+    return 1;
+  } else {
+    return 0;
+  }
+}
+
 class RedditUserInfo extends React.Component {
   constructor(props) {
     super(props);
@@ -87,8 +97,12 @@ class RedditUserInfo extends React.Component {
           <input type="submit" value="Submit"></input>
         </form>
         <div className="data">
-          <PostsIndex username={this.state.username} postsInfo={this.state.userPosts} />
-          <CommentsIndex username={this.state.username} commentsInfo={this.state.userComments} />
+          <PostsIndex username={this.state.username}
+                      postsInfo={this.state.userPosts}
+                      sortByScore={sortByScore} />
+          <CommentsIndex username={this.state.username}
+                      commentsInfo={this.state.userComments} 
+                      sortByScore={sortByScore} />
         </div>
       </div>
     )

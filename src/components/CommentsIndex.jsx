@@ -1,21 +1,11 @@
 import React from 'react';
 
-const sortByScore = (a, b) => {
-  if (a.score > b.score) {
-    return -1;
-  } else if (a.score < b.score) {
-    return 1;
-  } else {
-    return 0;
-  }
-}
-
-const CommentsIndex = ({ username, commentsInfo }) => {
+const CommentsIndex = ({ username, commentsInfo, sortByScore }) => {
   if (commentsInfo.length === 0) {
     return <div className="no-info">No comments to show!</div>;
   } else {
     return(
-      <div>
+      <div className="comments-posts">
         <div className="title">
           {`${username}'s Comments`}
         </div>
@@ -24,14 +14,13 @@ const CommentsIndex = ({ username, commentsInfo }) => {
             let displayedInfo = info.body;
             return(
               <div className="info-wrapper" key={info + i}>
-                <div className="score">{info.score}</div>
                 <div className="info">
-                  <div className="displayed-info">{displayedInfo}</div>
                   <a href={info.postLink}
+                     className="displayedInfo"
                      target="_blank"
-                     className="url"
-                     value={info.postLink}></a>
+                     className="url">{displayedInfo}</a>
                 </div>
+                <div className="score">{info.score}</div>
               </div>
             )
           })
