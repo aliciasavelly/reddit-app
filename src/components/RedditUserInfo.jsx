@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import InfoIndex from './InfoIndex';
+import PostsIndex from './PostsIndex';
 import CommentsIndex from './CommentsIndex';
 
 class RedditUserInfo extends React.Component {
@@ -87,7 +87,7 @@ class RedditUserInfo extends React.Component {
           <input type="submit" value="Submit"></input>
         </form>
         <div className="data">
-          <InfoIndex username={this.state.username} postsInfo={this.state.userPosts} />
+          <PostsIndex username={this.state.username} postsInfo={this.state.userPosts} />
           <CommentsIndex username={this.state.username} commentsInfo={this.state.userComments} />
         </div>
       </div>

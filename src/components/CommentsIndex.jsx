@@ -3,7 +3,7 @@ import React from 'react';
 const sortByScore = (a, b) => {
   if (a.score > b.score) {
     return -1;
-  } else if (a.score > b.score) {
+  } else if (a.score < b.score) {
     return 1;
   } else {
     return 0;
@@ -22,7 +22,6 @@ const CommentsIndex = ({ username, commentsInfo }) => {
         {
           commentsInfo.sort(sortByScore).map((info, i) => {
             let displayedInfo = info.body;
-
             return(
               <div className="info-wrapper" key={info + i}>
                 <div className="score">{info.score}</div>

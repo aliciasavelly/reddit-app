@@ -3,14 +3,14 @@ import React from 'react';
 const sortByScore = (a, b) => {
   if (a.score > b.score) {
     return -1;
-  } else if (a.score > b.score) {
+  } else if (a.score < b.score) {
     return 1;
   } else {
     return 0;
   }
 }
 
-const InfoIndex = ({ username, postsInfo }) => {
+const PostsIndex = ({ username, postsInfo }) => {
   if (postsInfo.length === 0) {
     return <div className="no-info">No posts to show!</div>;
   } else {
@@ -42,4 +42,4 @@ const InfoIndex = ({ username, postsInfo }) => {
   }
 }
 
-export default InfoIndex;
+export default PostsIndex;
