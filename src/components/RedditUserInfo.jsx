@@ -86,7 +86,7 @@ class RedditUserInfo extends React.Component {
 
   render() {
     return(
-      <div className="info">
+      <div className="outer-info">
         <form className="username-form" onSubmit={this.handleSubmit}>
           <label>Enter Username:
             <input type="text"
@@ -101,7 +101,7 @@ class RedditUserInfo extends React.Component {
                       postsInfo={this.state.userPosts}
                       sortByScore={sortByScore} />
           <CommentsIndex username={this.state.username}
-                      commentsInfo={this.state.userComments} 
+                      commentsInfo={this.state.userComments}
                       sortByScore={sortByScore} />
         </div>
       </div>

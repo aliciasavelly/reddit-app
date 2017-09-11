@@ -8,26 +8,31 @@
     .App .App-header .App-logo {
       animation: App-logo-spin infinite 20s linear;
       height: 80px; }
-  .App .info .data {
+  .App .outer-info .data {
     justify-content: center; }
-    .App .info .data .comments-posts {
+    .App .outer-info .data .comments-posts {
       display: flex;
       flex-direction: column;
       align-items: center; }
-    .App .info .data .title {
+    .App .outer-info .data .title {
       width: 100%;
       font-size: 24px;
       color: #4980AE;
       background: #CEE3F8;
       padding: 20px; }
-    .App .info .data .info-wrapper {
+    .App .outer-info .data .info-wrapper {
       width: 90%;
       display: flex;
       padding-bottom: 30px; }
-      .App .info .data .info-wrapper .info {
+      .App .outer-info .data .info-wrapper .info {
         width: 90%; }
-      .App .info .data .info-wrapper .score {
-        width: 10%;
+        .App .outer-info .data .info-wrapper .info .url {
+          text-decoration: none;
+          color: #000000; }
+      .App .outer-info .data .info-wrapper .score {
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
         background: #CEE3F8; }
 
 @keyframes App-logo-spin {
