@@ -1,3 +1,6 @@
+body {
+  overflow-x: hidden; }
+
 .App {
   text-align: center; }
   .App .App-header {
@@ -21,11 +24,17 @@
       background: #CEE3F8;
       padding: 20px; }
     .App .outer-info .data .info-wrapper {
-      width: 90%;
+      width: 100%;
       display: flex;
-      padding-bottom: 30px; }
+      border-bottom: 1px solid #838383;
+      box-sizing: border-box;
+      padding: 30px 60px; }
       .App .outer-info .data .info-wrapper .info {
-        width: 90%; }
+        width: 90%;
+        text-align: left;
+        padding-left: 20px;
+        display: flex;
+        align-items: center; }
         .App .outer-info .data .info-wrapper .info .url {
           text-decoration: none;
           color: #000000; }

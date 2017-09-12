@@ -15,13 +15,12 @@ const PostsIndex = ({ username, postsInfo, sortByScore }) => {
 
             return(
               <div className="info-wrapper" key={info + i}>
+                <div className="score">{info.score}</div>
                 <div className="info">
-                  <div className="displayed-info">{displayedInfo}</div>
                   <a href={info.url}
                      target="_blank"
-                     className="url">Link to Original Post</a>
+                     className="url">{displayedInfo}</a>
                 </div>
-                <div className="score">{info.score}</div>
               </div>
             )
           })

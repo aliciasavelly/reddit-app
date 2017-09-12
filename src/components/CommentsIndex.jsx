@@ -14,12 +14,13 @@ const CommentsIndex = ({ username, commentsInfo, sortByScore }) => {
             let displayedInfo = info.body;
             return(
               <div className="info-wrapper" key={info + i}>
+                <div className="score">{info.score}</div>
                 <div className="info">
+                  <div className="displayed-info">{displayedInfo}</div>
                   <a href={info.postLink}
                      className="displayedInfo url"
-                     target="_blank">{displayedInfo}</a>
+                     target="_blank">Link to Original Post</a>
                 </div>
-                <div className="score">{info.score}</div>
               </div>
             )
           })
