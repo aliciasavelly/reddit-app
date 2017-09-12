@@ -34,10 +34,25 @@ body {
         text-align: left;
         padding-left: 20px;
         display: flex;
-        align-items: center; }
+        align-items: center;
+        flex-direction: column; }
         .App .outer-info .data .info-wrapper .info .url {
           text-decoration: none;
           color: #000000; }
+        .App .outer-info .data .info-wrapper .info .button {
+          height: 45px;
+          width: 120px;
+          background: #CEE3F8;
+          transition: 1s;
+          text-align: center;
+          vertical-align: middle;
+          align-items: center;
+          display: flex;
+          justify-content: center;
+          border-radius: 10px; }
+        .App .outer-info .data .info-wrapper .info .button:hover {
+          background: #80bbed;
+          transition: 1s; }
       .App .outer-info .data .info-wrapper .score {
         width: 60px;
         height: 60px;

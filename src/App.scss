@@ -55,10 +55,29 @@ body {
           padding-left: 20px;
           display: flex;
           align-items: center;
+          flex-direction: column;
 
           .url {
             text-decoration: none;
             color: #000000;
+          }
+
+          .button {
+            height: 45px;
+            width: 120px;
+            background: #CEE3F8;
+            transition: 1s;
+            text-align: center;
+            vertical-align: middle;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            border-radius: 10px;
+          }
+
+          .button:hover {
+            background: #80bbed;
+            transition: 1s;
           }
         }
 

@@ -18,8 +18,8 @@ const CommentsIndex = ({ username, commentsInfo, sortByScore }) => {
                 <div className="info">
                   <div className="displayed-info">{displayedInfo}</div>
                   <a href={info.postLink}
-                     className="displayedInfo url"
-                     target="_blank">Link to Original Post</a>
+                     className="displayedInfo url button"
+                     target="_blank">Original Post</a>
                 </div>
               </div>
             )
